@@ -11,16 +11,17 @@ const database = process.env.database;
 const bot = new Telegram(token, {
     polling: true
 });
- mongoose.connect(database)
+mongoose.connect(database)
 
 bot.setMyCommands(menu)
 bot.onText(/\/start/, (msg) => {
     userAdd(msg.from.id, msg.from.username)
     welcomeMessage(msg.from.id, 'lalala')
 })
-bot.on('message',(msg)=>{
+bot.on('message', (msg) => {
     if (msg.text == '/add') addMsg(message)
 })
+
 function welcomeMessage(adressat, text) {
     bot.sendMessage(adressat, text)
 }
