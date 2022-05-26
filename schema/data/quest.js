@@ -16,4 +16,13 @@ arr = [
         text: 'Кримськы піски,Олешківські піски,Довбушева пустка,Сербська пустеля',
     }
 ] 
-console.log()
+a= {
+
+}
+let writers = arr[0].variants;
+
+console.log (Object.length(a));
+console.log(arr[0].variants.length)
+const keys = Object.keys(arr[0].variants)
+
+//const arr = (arr[0].variants[keys[keys.length*Math.random()<<0]])
