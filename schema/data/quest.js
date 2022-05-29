@@ -16,13 +16,22 @@ arr = [
         text: 'Кримськы піски,Олешківські піски,Довбушева пустка,Сербська пустеля',
     }
 ] 
-a= {
 
+/*
+answers = object answers database 
+*/
+function randomAnswer (answers){ 
+    let remapWriters=[];
+    let writers = answers;
+    let keys = Object.keys(writers);
+    while (Object.keys(writers).length>0){
+        let randomKey = keys.length*Math.random()<<0;
+        const writer = writers[keys[randomKey]]
+        delete writers[keys[randomKey]];
+        keys.splice(randomKey,1)
+        remapWriters.push(writer);
+      
 }
-let writers = arr[0].variants;
-
-console.log (Object.length(a));
-console.log(arr[0].variants.length)
-const keys = Object.keys(arr[0].variants)
-
-//const arr = (arr[0].variants[keys[keys.length*Math.random()<<0]])
+    return remapWriters
+}
+console.log(randomAnswer(arr[0].variants))
